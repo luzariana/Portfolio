@@ -1,0 +1,84 @@
+*,
+*::after,
+*::before:not(i) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-family: "Nunito", sans-serif;
+}
+
+html,
+body,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-family: "Nunito", sans-serif;
+  color: white;
+}
+
+header,
+main {
+  background-color: black;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+nav {
+  position: absolute;
+}
+
+.smokeEffect {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  filter: opacity(0.1);
+  animation: float 15s ease-in-out infinite;
+}
+.smokeEffect::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/smoke2.webp");
+  background-size: cover;
+  background-position: center bottom;
+  animation: side 18s ease-in-out infinite;
+}
+.smokeEffect:last-of-type {
+  scale: -1 1;
+  background-image: url("../images/smoke2.webp");
+  animation: float 12s ease-in-out infinite;
+}
+.smokeEffect:last-of-type::after {
+  animation: side 14s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(50px);
+  }
+  50% {
+    transform: translatey(-50px);
+  }
+  100% {
+    transform: translatey(50px);
+  }
+}
+@keyframes side {
+  0% {
+    transform: translatex(50px);
+  }
+  50% {
+    transform: translatex(-50px);
+  }
+  100% {
+    transform: translatex(50px);
+  }
+}/*# sourceMappingURL=styles.css.map */
